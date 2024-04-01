@@ -123,7 +123,9 @@ class LoginViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            logoImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 110),
+            logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 60),
+            logoImageView.heightAnchor.constraint(equalToConstant: 40),
+            logoImageView.widthAnchor.constraint(equalToConstant: 118),
             
             headGuideLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             headGuideLabel.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 23),
@@ -131,20 +133,18 @@ class LoginViewController: UIViewController {
             detailGuideLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             detailGuideLabel.topAnchor.constraint(equalTo: headGuideLabel.bottomAnchor, constant: 14),
             
-            loginInfoStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            loginInfoStackView.heightAnchor.constraint(equalToConstant: 178),
             loginInfoStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 22),
             loginInfoStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -22),
             loginInfoStackView.topAnchor.constraint(equalTo: detailGuideLabel.bottomAnchor, constant: 68),
             
             makeAccountButton.topAnchor.constraint(equalTo: loginInfoStackView.bottomAnchor, constant: 73),
             makeAccountButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 22),
-            makeAccountButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -214),
             makeAccountButton.widthAnchor.constraint(equalToConstant: 68),
             makeAccountButton.heightAnchor.constraint(equalToConstant: 22),
             
-            nextButton.topAnchor.constraint(equalTo: loginInfoStackView.bottomAnchor, constant: 74),
+            nextButton.topAnchor.constraint(equalTo: loginInfoStackView.bottomAnchor, constant: 64),
             nextButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -22),
-            nextButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -203),
             nextButton.widthAnchor.constraint(equalToConstant: 74),
             nextButton.heightAnchor.constraint(equalToConstant: 42)
         ])

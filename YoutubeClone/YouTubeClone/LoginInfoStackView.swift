@@ -60,12 +60,12 @@ class LoginInfoStackView: UIStackView {
     
     private func setupUI() {
         axis = .vertical
-        spacing = 17
         alignment = .fill
         distribution = .fillEqually
-        addArrangedSubview(nameTextField)
-        addArrangedSubview(idTextField)
-        addArrangedSubview(passwordTextField)
+        spacing = 17
+        [nameTextField, idTextField, passwordTextField].forEach {
+            addArrangedSubview($0)
+        }
     }
     
 }
