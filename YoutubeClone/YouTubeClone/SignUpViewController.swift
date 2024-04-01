@@ -55,9 +55,7 @@ final class SignUpViewController: UIViewController {
         setupUI()
         
         nextButton.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
-        NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidChange(_:)), name: UITextField.textDidChangeNotification, object: nil)
-        passwordCheckboxImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(passwordCheckboxTapped)))
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidChange(_:)), name: UITextField.textDidChangeNotification, object: nil)        
     }
     
     @objc private func textFieldDidChange(_ textField: UITextField) {
