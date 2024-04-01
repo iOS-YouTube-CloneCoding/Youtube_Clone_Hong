@@ -103,27 +103,29 @@ final class SignUpViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            logoImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 110),
-            
+            logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 60),
+            logoImageView.heightAnchor.constraint(equalToConstant: 40),
+            logoImageView.widthAnchor.constraint(equalToConstant: 118),
+
             headGuideLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             headGuideLabel.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 23),
             
-            loginInfoStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             loginInfoStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 22),
             loginInfoStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -22),
             loginInfoStackView.topAnchor.constraint(equalTo: headGuideLabel.bottomAnchor, constant: 128),
+            loginInfoStackView.heightAnchor.constraint(equalToConstant: 178),
             
-            passwordCheckboxImageView.topAnchor.constraint(equalTo: loginInfoStackView.bottomAnchor, constant: 14),
-            passwordCheckboxImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 22),
+            passwordCheckboxImageView.topAnchor.constraint(equalTo: loginInfoStackView.bottomAnchor, constant: 17),
+            passwordCheckboxImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 21),
+            passwordCheckboxImageView.widthAnchor.constraint(equalToConstant: 16),
+            passwordCheckboxImageView.heightAnchor.constraint(equalToConstant: 16),
             
-            passwordToggleLabel.topAnchor.constraint(equalTo: loginInfoStackView.bottomAnchor, constant: 14),
-            passwordToggleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 48),
+            passwordToggleLabel.centerYAnchor.constraint(equalTo: passwordCheckboxImageView.centerYAnchor),
+            passwordToggleLabel.leadingAnchor.constraint(equalTo: passwordCheckboxImageView.trailingAnchor, constant: 11),
             
             nextButton.topAnchor.constraint(equalTo: passwordToggleLabel.bottomAnchor, constant: 29),
-            nextButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -203),
-            nextButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            nextButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 22),
-            nextButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -22),
+            nextButton.leadingAnchor.constraint(equalTo: loginInfoStackView.leadingAnchor),
+            nextButton.trailingAnchor.constraint(equalTo: loginInfoStackView.trailingAnchor),
             nextButton.heightAnchor.constraint(equalToConstant: 42)
         ])
     }
