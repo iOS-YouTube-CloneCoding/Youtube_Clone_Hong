@@ -14,10 +14,7 @@ class LoginInfoStackView: UIStackView {
         textField.placeholder = "이름을 입력해주세요."
         textField.font = UIFont.systemFont(ofSize: 15)
         textField.borderStyle = .roundedRect
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 14, height: 1))
-        textField.leftView = paddingView
-        textField.leftViewMode = .always
-        
+        textField.addLeftPadding()
         return textField
     }()
     
@@ -26,10 +23,7 @@ class LoginInfoStackView: UIStackView {
         textField.placeholder = "이메일 또는 휴대전화"
         textField.font = UIFont.systemFont(ofSize: 15)
         textField.borderStyle = .roundedRect
-        // 패딩 -> 메서드 만들어서 사용 (계속사용되니까) UITextField 익스텐션에..
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 14, height: 1))
-        textField.leftView = paddingView
-        textField.leftViewMode = .always
+        textField.addLeftPadding()
         return textField
     }()
     
@@ -38,9 +32,7 @@ class LoginInfoStackView: UIStackView {
         textField.placeholder = "비밀번호 입력"
         textField.font = UIFont.systemFont(ofSize: 15)
         textField.borderStyle = .roundedRect
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 14, height: 1))
-        textField.leftView = paddingView
-        textField.leftViewMode = .always
+        textField.addLeftPadding()
         textField.isSecureTextEntry = true
         return textField
     }()
