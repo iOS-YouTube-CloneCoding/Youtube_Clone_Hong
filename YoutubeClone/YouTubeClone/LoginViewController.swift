@@ -16,7 +16,7 @@ class LoginViewController: UIViewController {
     // lazy var에 대해... (stackView에서는 안됨..?)
     
     private let logoImageView: UIImageView = {
-        let imageView = UIImageView(image: UIImage(named: "GoogleLogo"))
+        let imageView = UIImageView(image: UIImage(named: "Googlelogo"))
         imageView.contentMode = .scaleAspectFit //  이미지가 이미지 뷰에 맞게 비율을 유지하면서 확대 또는 축소되도록 ...?
         imageView.widthAnchor.constraint(equalToConstant: 118).isActive = true // ...?
         imageView.heightAnchor.constraint(equalToConstant: 40).isActive = true

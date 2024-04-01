@@ -20,7 +20,7 @@ final class LoginSuccessViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private let logoImageView = UIImageView(image: UIImage(named: "GoogleLogo"))
+    private let logoImageView = UIImageView(image: UIImage(named: "Googlelogo"))
     
     // extension 활용해보기
     private let welcomLabel: UILabel = {

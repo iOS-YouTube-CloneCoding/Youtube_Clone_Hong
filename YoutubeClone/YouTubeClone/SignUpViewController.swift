@@ -11,7 +11,7 @@ final class SignUpViewController: UIViewController {
     
     private let loginInfoStackView = LoginInfoStackView()
     
-    private let logoImageView = UIImageView(image: UIImage(named: "GoogleLogo"))
+    private let logoImageView = UIImageView(image: UIImage(named: "Googlelogo"))
     
     private let headGuideLabel: UILabel = {
         let label = UILabel()
