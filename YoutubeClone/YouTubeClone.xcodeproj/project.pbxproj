@@ -54,6 +54,17 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		1D3CAADF2BBB1A4E00D20406 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1DE69EFA2BB19E5A0001CAB4 /* LoginInfoStackView.swift */,
+				1DE69EF42BB186930001CAB4 /* LoginViewController.swift */,
+				1DE69EF62BB186F20001CAB4 /* SignUpViewController.swift */,
+				1DE69EF82BB187590001CAB4 /* LoginSuccessViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		1DE69ED42BB185750001CAB4 = {
 			isa = PBXGroup;
 			children = (
@@ -73,13 +84,10 @@
 		1DE69EDF2BB185750001CAB4 /* YouTubeClone */ = {
 			isa = PBXGroup;
 			children = (
+				1D3CAADF2BBB1A4E00D20406 /* ViewController */,
 				1D3CAADA2BBB13C000D20406 /* Extension */,
 				1DE69EE02BB185750001CAB4 /* AppDelegate.swift */,
 				1DE69EE22BB185750001CAB4 /* SceneDelegate.swift */,
-				1DE69EFA2BB19E5A0001CAB4 /* LoginInfoStackView.swift */,
-				1DE69EF42BB186930001CAB4 /* LoginViewController.swift */,
-				1DE69EF62BB186F20001CAB4 /* SignUpViewController.swift */,
-				1DE69EF82BB187590001CAB4 /* LoginSuccessViewController.swift */,
 				1DE69EE92BB185770001CAB4 /* Assets.xcassets */,
 				1DE69EEB2BB185770001CAB4 /* LaunchScreen.storyboard */,
 				1DE69EEE2BB185770001CAB4 /* Info.plist */,
