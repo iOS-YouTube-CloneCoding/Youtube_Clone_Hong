@@ -35,15 +35,8 @@ class LoginViewController: UIViewController {
         label.text = "Youtube로 이동하여 계속하세요.\n앱 및 Safari에서도 Google 서비스에 로그인됩니다. "
         label.numberOfLines = 0 // 여러 줄 표시를 위해 설정
         label.font = UIFont.systemFont(ofSize: 14)
-        
-        // 줄간격 설정
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = 5
-        let attributedString = NSMutableAttributedString(string: label.text ?? "")
-        attributedString.addAttribute(.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: attributedString.length))
-        label.attributedText = attributedString
+        label.setLineSpacing(lineSpacing: 5)
         label.textAlignment = .center
-        
         return label
     }()
     
