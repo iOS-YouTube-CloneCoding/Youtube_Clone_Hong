@@ -39,15 +39,16 @@ final class SignUpViewController: UIViewController {
         return button
     }()
 
-    // 버튼으로 바꿔야함..
-    private let passwordCheckboxImageView: UIImageView = {
-        let imageView = UIImageView(image: UIImage(systemName: "square"))
-        imageView.contentMode = .scaleAspectFit
-        imageView.tintColor = .gray
-        imageView.isUserInteractionEnabled = true
-        return imageView
+    private let passwordCheckBox: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "square"), for: .normal)
+        button.setImage(UIImage(systemName: "checkmark.square"), for: .selected)
+        button.imageView?.tintColor = .gray
+        button.isSelected = false
+        button.addTarget(self, action: #selector(passwordCheckBoxTapped(_:)), for: .touchUpInside)
+        return button
     }()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -86,17 +87,22 @@ final class SignUpViewController: UIViewController {
         present(navigationController, animated: true, completion: nil)
     }
     
-    @objc func passwordCheckboxTapped() {
-        let isChecked = passwordCheckboxImageView.image == UIImage(systemName: "square")
-        passwordCheckboxImageView.image = isChecked ? UIImage(systemName: "checkmark.square") : UIImage(systemName: "square")
-        passwordCheckboxImageView.tintColor = isChecked ? .systemBlue : .gray
+    @objc func passwordCheckBoxTapped(_ sender: UIButton) {
+        sender.isSelected.toggle()
+        loginInfoStackView.passwordTextField.isSecureTextEntry = !sender.isSelected
         
-        loginInfoStackView.passwordTextField.isSecureTextEntry = !isChecked
+        if sender.isSelected {
+            sender.setImage(UIImage(systemName: "checkmark.square"), for: .selected)
+            sender.imageView?.tintColor = .systemBlue
+        } else {
+            sender.setImage(UIImage(systemName: "square"), for: .normal)
+            sender.imageView?.tintColor = .gray
+        }
     }
     
     private func setupUI() {
         [logoImageView, headGuideLabel, loginInfoStackView, 
-         passwordCheckboxImageView, passwordToggleLabel, nextButton].forEach {
+         passwordCheckBox, passwordToggleLabel, nextButton].forEach {
             view.addSubview($0)
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
@@ -115,13 +121,13 @@ final class SignUpViewController: UIViewController {
             loginInfoStackView.topAnchor.constraint(equalTo: headGuideLabel.bottomAnchor, constant: 128),
             loginInfoStackView.heightAnchor.constraint(equalToConstant: 178),
             
-            passwordCheckboxImageView.topAnchor.constraint(equalTo: loginInfoStackView.bottomAnchor, constant: 17),
-            passwordCheckboxImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 21),
-            passwordCheckboxImageView.widthAnchor.constraint(equalToConstant: 16),
-            passwordCheckboxImageView.heightAnchor.constraint(equalToConstant: 16),
+            passwordCheckBox.topAnchor.constraint(equalTo: loginInfoStackView.bottomAnchor, constant: 17),
+            passwordCheckBox.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 21),
+            passwordCheckBox.widthAnchor.constraint(equalToConstant: 16),
+            passwordCheckBox.heightAnchor.constraint(equalToConstant: 16),
             
-            passwordToggleLabel.centerYAnchor.constraint(equalTo: passwordCheckboxImageView.centerYAnchor),
-            passwordToggleLabel.leadingAnchor.constraint(equalTo: passwordCheckboxImageView.trailingAnchor, constant: 11),
+            passwordToggleLabel.centerYAnchor.constraint(equalTo: passwordCheckBox.centerYAnchor),
+            passwordToggleLabel.leadingAnchor.constraint(equalTo: passwordCheckBox.trailingAnchor, constant: 11),
             
             nextButton.topAnchor.constraint(equalTo: passwordToggleLabel.bottomAnchor, constant: 29),
             nextButton.leadingAnchor.constraint(equalTo: loginInfoStackView.leadingAnchor),
