@@ -76,10 +76,10 @@ class LoginViewController: UIViewController {
     
     @objc func textFieldDidChange(_ textField: UITextField) {
             if isAllFieldsFilled {
-                nextButton.backgroundColor = .systemBlue
+                nextButton.backgroundColor = UIColor.customBlueButtonColor()
                 nextButton.isEnabled = true
             } else {
-                nextButton.backgroundColor = .gray
+                nextButton.backgroundColor = .lightGray
                 nextButton.isEnabled = false
             }
     }

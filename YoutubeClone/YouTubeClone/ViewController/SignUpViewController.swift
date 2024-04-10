@@ -33,7 +33,7 @@ final class SignUpViewController: UIViewController {
         button.setTitle("다음", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
         button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = .gray
+        button.backgroundColor = .lightGray
         button.layer.cornerRadius = 8
         button.isEnabled = false
         return button
@@ -43,7 +43,7 @@ final class SignUpViewController: UIViewController {
         let button = UIButton()
         button.setImage(UIImage(systemName: "square"), for: .normal)
         button.setImage(UIImage(systemName: "checkmark.square"), for: .selected)
-        button.imageView?.tintColor = .gray
+        button.imageView?.tintColor = .lightGray
         button.isSelected = false
         button.addTarget(self, action: #selector(passwordCheckBoxTapped(_:)), for: .touchUpInside)
         return button
@@ -60,10 +60,10 @@ final class SignUpViewController: UIViewController {
     
     @objc private func textFieldDidChange(_ textField: UITextField) {
         if isAllFieldsFilled {
-            nextButton.backgroundColor = .systemBlue
+            nextButton.backgroundColor = UIColor.customBlueButtonColor()
             nextButton.isEnabled = true
         } else {
-            nextButton.backgroundColor = .gray
+            nextButton.backgroundColor = .lightGray
             nextButton.isEnabled = false
         }
     }
@@ -91,10 +91,10 @@ final class SignUpViewController: UIViewController {
         
         if sender.isSelected {
             sender.setImage(UIImage(systemName: "checkmark.square"), for: .selected)
-            sender.imageView?.tintColor = .systemBlue
+            sender.imageView?.tintColor = UIColor.customBlueButtonColor()
         } else {
             sender.setImage(UIImage(systemName: "square"), for: .normal)
-            sender.imageView?.tintColor = .gray
+            sender.imageView?.tintColor = .lightGray
         }
     }
     
