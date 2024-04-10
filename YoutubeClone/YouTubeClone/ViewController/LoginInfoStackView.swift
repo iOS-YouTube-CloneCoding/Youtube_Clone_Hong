@@ -10,32 +10,23 @@ import UIKit
 class LoginInfoStackView: UIStackView {
     
     let nameTextField: UITextField = {
-        let textField = UITextField()
+        let textField = LoginTextField()
         textField.placeholder = "이름을 입력해주세요."
-        textField.font = UIFont.systemFont(ofSize: 15)
-        textField.borderStyle = .roundedRect
-        textField.addLeftPadding()
         return textField
     }()
-    
+
     let idTextField: UITextField = {
-        let textField = UITextField()
+        let textField = LoginTextField()
         textField.placeholder = "이메일 또는 휴대전화"
-        textField.font = UIFont.systemFont(ofSize: 15)
-        textField.borderStyle = .roundedRect
-        textField.addLeftPadding()
         return textField
     }()
-    
+
     let passwordTextField: UITextField = {
-        let textField = UITextField()
+        let textField = LoginTextField()
         textField.placeholder = "비밀번호 입력"
-        textField.font = UIFont.systemFont(ofSize: 15)
-        textField.borderStyle = .roundedRect
-        textField.addLeftPadding()
-        textField.isSecureTextEntry = true
         return textField
     }()
+
     
     var isAllFieldsFilled: Bool {
         return !nameTextField.text!.isEmpty && !idTextField.text!.isEmpty && !passwordTextField.text!.isEmpty
