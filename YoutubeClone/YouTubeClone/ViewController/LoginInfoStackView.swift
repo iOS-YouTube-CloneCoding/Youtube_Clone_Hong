@@ -7,8 +7,7 @@
 
 import UIKit
 
-class LoginInfoStackView: UIStackView {
-    
+class LoginInfoStackView: UIStackView, UITextFieldDelegate {
     let nameTextField: UITextField = {
         let textField = LoginTextField()
         textField.placeholder = "이름을 입력해주세요."
@@ -35,6 +34,7 @@ class LoginInfoStackView: UIStackView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
+        setupTextFieldDelegate()
     }
     
     required init(coder: NSCoder) {
@@ -49,6 +49,23 @@ class LoginInfoStackView: UIStackView {
         [nameTextField, idTextField, passwordTextField].forEach {
             addArrangedSubview($0)
         }
+    }
+    
+    private func setupTextFieldDelegate() {
+        nameTextField.delegate = self
+        idTextField.delegate = self
+        passwordTextField.delegate = self
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == nameTextField {
+            idTextField.becomeFirstResponder()
+        } else if textField == idTextField {
+            passwordTextField.becomeFirstResponder()
+        } else if textField == passwordTextField {
+            textField.resignFirstResponder()
+        }
+        return true
     }
     
 }
