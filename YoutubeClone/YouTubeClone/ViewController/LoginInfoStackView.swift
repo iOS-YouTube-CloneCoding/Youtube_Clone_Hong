@@ -46,15 +46,11 @@ class LoginInfoStackView: UIStackView, UITextFieldDelegate {
         alignment = .fill
         distribution = .fillEqually
         spacing = 17
-        [nameTextField, idTextField, passwordTextField].forEach {
-            addArrangedSubview($0)
-        }
+        [nameTextField, idTextField, passwordTextField].forEach { addArrangedSubview($0) }
     }
     
     private func setupTextFieldDelegate() {
-        nameTextField.delegate = self
-        idTextField.delegate = self
-        passwordTextField.delegate = self
+        [nameTextField, idTextField, passwordTextField].forEach { $0.delegate = self }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
