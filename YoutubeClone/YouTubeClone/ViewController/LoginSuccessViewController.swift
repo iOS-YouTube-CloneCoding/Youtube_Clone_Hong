@@ -36,7 +36,7 @@ final class LoginSuccessViewController: UIViewController {
         button.setTitle("확인", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
         button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = UIColor.customBlueButtonColor()
+        button.backgroundColor = .customBlue
         button.layer.cornerRadius = 8
         return button
     }()
@@ -45,7 +45,7 @@ final class LoginSuccessViewController: UIViewController {
         let button = UIButton()
         button.setTitle("다른 계정으로 로그인하기", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
-        button.setTitleColor(UIColor.customBlueButtonColor(), for: .normal)
+        button.setTitleColor(.customBlue, for: .normal)
         button.backgroundColor = UIColor.clear
         button.layer.cornerRadius = 8
         return button
