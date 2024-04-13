@@ -11,6 +11,13 @@ final class SignUpViewController: UIViewController {
     
     private let loginInfoStackView = LoginInfoStackView()
     
+    private var isAllFieldsFilled: Bool = false {
+        didSet {
+            nextButton.backgroundColor = isAllFieldsFilled ? .customBlue : .lightGray
+            nextButton.isEnabled = isAllFieldsFilled
+        }
+    }
+    
     private let logoImageView = UIImageView(image: UIImage(named: "Googlelogo"))
     
     private let headGuideLabel: UILabel = {
@@ -27,7 +34,6 @@ final class SignUpViewController: UIViewController {
         return label
     }()
     
-    // 버튼 백그라운드 지정안하면 텍스트필드 입력전까지 버튼안보임..why?
     private let nextButton: UIButton = {
         let button = UIButton()
         button.setTitle("다음", for: .normal)
@@ -38,42 +44,38 @@ final class SignUpViewController: UIViewController {
         button.isEnabled = false
         return button
     }()
-
+    
     private let passwordCheckBox: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(systemName: "square"), for: .normal)
         button.setImage(UIImage(systemName: "checkmark.square"), for: .selected)
         button.imageView?.tintColor = .lightGray
         button.isSelected = false
-        button.addTarget(self, action: #selector(passwordCheckBoxTapped(_:)), for: .touchUpInside)
         return button
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-        setupUI()
         
-        nextButton.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
-        NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidChange(_:)), name: UITextField.textDidChangeNotification, object: nil)        
+        view.backgroundColor = .white
+        configureUI()
+        setupButtonActions()
+        setupTextFieldEditingChangedActions()
     }
     
-    @objc private func textFieldDidChange(_ textField: UITextField) {
-        if isAllFieldsFilled {
-            nextButton.backgroundColor = UIColor.customBlueButtonColor()
-            nextButton.isEnabled = true
-        } else {
-            nextButton.backgroundColor = .lightGray
-            nextButton.isEnabled = false
+    private func setupButtonActions() {
+        nextButton.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
+        passwordCheckBox.addTarget(self, action: #selector(passwordCheckBoxTapped(_:)), for: .touchUpInside)
+    }
+    
+    private func setupTextFieldEditingChangedActions() {
+        [loginInfoStackView.nameTextField, loginInfoStackView.idTextField, loginInfoStackView.passwordTextField].forEach {
+            $0.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         }
     }
     
-    private var isAllFieldsFilled: Bool {
-        return loginInfoStackView.isAllFieldsFilled
-    }
-    
-    deinit {
-        NotificationCenter.default.removeObserver(self)
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        isAllFieldsFilled = loginInfoStackView.isAllFieldsFilled
     }
     
     @objc func nextButtonTapped() {
@@ -91,7 +93,7 @@ final class SignUpViewController: UIViewController {
         
         if sender.isSelected {
             sender.setImage(UIImage(systemName: "checkmark.square"), for: .selected)
-            sender.imageView?.tintColor = UIColor.customBlueButtonColor()
+            sender.imageView?.tintColor = .customBlue
         } else {
             sender.setImage(UIImage(systemName: "square"), for: .normal)
             sender.imageView?.tintColor = .lightGray
