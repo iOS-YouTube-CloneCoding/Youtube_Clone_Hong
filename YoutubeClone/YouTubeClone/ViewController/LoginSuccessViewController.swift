@@ -54,8 +54,11 @@ final class LoginSuccessViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        setupUI()
-        
+        configureUI()
+        setupButtonActions()
+    }
+    
+    private func setupButtonActions() {
         okButton.addTarget(self, action: #selector(okButtonTapped), for: .touchUpInside)
         loginWithDifferentAccountButton.addTarget(self, action: #selector(loginWithDifferentAccountButtonTapped), for: .touchUpInside)
     }
