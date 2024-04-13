@@ -105,10 +105,12 @@ class LoginViewController: UIViewController {
         let navigationController = UINavigationController(rootViewController: signUpSuccessVC)
         present(navigationController, animated: true, completion: nil)
     }
+}
+
+extension LoginViewController {
     
-    private func setupUI() {
-        // ⭐️ 고차함수가 너무 많아지면 연산이 많아져서 안좋을수있음.. 주의
-        [logoImageView, loginInfoStackView, headGuideLabel, 
+    private func configureUI() {
+        [logoImageView, loginInfoStackView, headGuideLabel,
          detailGuideLabel, makeAccountButton, nextButton].forEach {
             view.addSubview($0)
             $0.translatesAutoresizingMaskIntoConstraints = false
@@ -142,8 +144,6 @@ class LoginViewController: UIViewController {
             nextButton.heightAnchor.constraint(equalToConstant: 42)
         ])
     }
-    
 }
 
-// NSLayoutConstraint 익숙해지면 -> snapkit 사용해보기
 
