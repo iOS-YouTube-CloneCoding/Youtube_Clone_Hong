@@ -97,9 +97,12 @@ final class SignUpViewController: UIViewController {
             sender.imageView?.tintColor = .lightGray
         }
     }
+}
+
+extension SignUpViewController {
     
-    private func setupUI() {
-        [logoImageView, headGuideLabel, loginInfoStackView, 
+    private func configureUI() {
+        [logoImageView, headGuideLabel, loginInfoStackView,
          passwordCheckBox, passwordToggleLabel, nextButton].forEach {
             view.addSubview($0)
             $0.translatesAutoresizingMaskIntoConstraints = false
@@ -110,7 +113,7 @@ final class SignUpViewController: UIViewController {
             logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 60),
             logoImageView.heightAnchor.constraint(equalToConstant: 40),
             logoImageView.widthAnchor.constraint(equalToConstant: 118),
-
+            
             headGuideLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             headGuideLabel.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 23),
             
@@ -133,7 +136,4 @@ final class SignUpViewController: UIViewController {
             nextButton.heightAnchor.constraint(equalToConstant: 42)
         ])
     }
-    
 }
-
-// 텍스트필드 입력시 키보드처리 (구글눌러보기)
