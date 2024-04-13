@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1D3CAADC2BBB13F000D20406 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3CAADB2BBB13F000D20406 /* UILabel+.swift */; };
-		1D3CAADE2BBB166300D20406 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3CAADD2BBB166300D20406 /* UITextField+.swift */; };
+		1D3CAADE2BBB166300D20406 /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3CAADD2BBB166300D20406 /* LoginTextField.swift */; };
 		1D3CAAE12BBB1B8400D20406 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3CAAE02BBB1B8400D20406 /* UIColor+.swift */; };
 		1DE69EE12BB185750001CAB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE69EE02BB185750001CAB4 /* AppDelegate.swift */; };
 		1DE69EE32BB185750001CAB4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE69EE22BB185750001CAB4 /* SceneDelegate.swift */; };
@@ -35,7 +35,7 @@
 
 /* Begin PBXFileReference section */
 		1D3CAADB2BBB13F000D20406 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
-		1D3CAADD2BBB166300D20406 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
+		1D3CAADD2BBB166300D20406 /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
 		1D3CAAE02BBB1B8400D20406 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		1DE69EDD2BB185750001CAB4 /* YouTubeClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YouTubeClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DE69EE02BB185750001CAB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -64,7 +64,6 @@
 			isa = PBXGroup;
 			children = (
 				1D3CAADB2BBB13F000D20406 /* UILabel+.swift */,
-				1D3CAADD2BBB166300D20406 /* UITextField+.swift */,
 				1D3CAAE02BBB1B8400D20406 /* UIColor+.swift */,
 			);
 			path = Extension;
@@ -93,6 +92,14 @@
 			path = Apps;
 			sourceTree = "<group>";
 		};
+		1DB5088A2BC9855F0096A747 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				1D3CAADD2BBB166300D20406 /* LoginTextField.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		1DE69ED42BB185750001CAB4 = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				1D3CAAE22BBB1F5700D20406 /* Apps */,
+				1DB5088A2BC9855F0096A747 /* Utils */,
 				1D3CAADA2BBB13C000D20406 /* Extension */,
 				1D3CAADF2BBB1A4E00D20406 /* ViewController */,
 			);
@@ -197,7 +205,7 @@
 				1D3CAADC2BBB13F000D20406 /* UILabel+.swift in Sources */,
 				1DE69EE32BB185750001CAB4 /* SceneDelegate.swift in Sources */,
 				1DE69EF72BB186F20001CAB4 /* SignUpViewController.swift in Sources */,
-				1D3CAADE2BBB166300D20406 /* UITextField+.swift in Sources */,
+				1D3CAADE2BBB166300D20406 /* LoginTextField.swift in Sources */,
 				1D3CAAE12BBB1B8400D20406 /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
