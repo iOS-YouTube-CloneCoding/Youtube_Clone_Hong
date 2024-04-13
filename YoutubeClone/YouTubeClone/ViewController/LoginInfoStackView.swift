@@ -49,6 +49,9 @@ class LoginInfoStackView: UIStackView, UITextFieldDelegate {
         [nameTextField, idTextField, passwordTextField].forEach { addArrangedSubview($0) }
     }
     
+}
+
+extension LoginInfoStackView: UITextFieldDelegate {
     private func setupTextFieldDelegate() {
         [nameTextField, idTextField, passwordTextField].forEach { $0.delegate = self }
     }
