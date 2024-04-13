@@ -1,5 +1,5 @@
 //
-//  UITextField+.swift
+//  LoginTextField.swift
 //  YouTubeClone
 //
 //  Created by yujaehong on 4/2/24.
@@ -10,7 +10,7 @@ import UIKit
 class LoginTextField: UITextField {
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupTextField()
+        configureTextField()
     }
     
     required init(coder: NSCoder) {
@@ -23,7 +23,7 @@ class LoginTextField: UITextField {
         self.leftViewMode = .always
     }
     
-    private func setupTextField() {
+    private func configureTextField() {
         self.font = UIFont.systemFont(ofSize: 15)
         self.borderStyle = .roundedRect
         self.addLeftPadding(width: 14, height: 1)
