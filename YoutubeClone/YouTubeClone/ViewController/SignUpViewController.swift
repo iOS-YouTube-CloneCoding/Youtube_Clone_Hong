@@ -102,7 +102,6 @@ final class SignUpViewController: UIViewController {
 }
 
 extension SignUpViewController {
-    
     private func configureUI() {
         [logoImageView, headGuideLabel, loginInfoStackView,
          passwordCheckBox, passwordToggleLabel, nextButton].forEach {
