@@ -11,9 +11,12 @@ class LoginViewController: UIViewController {
     
     private let loginInfoStackView = LoginInfoStackView()
     
-    //  let logoImageView = UIImageView(image: UIImage(named: "GoogleLogo"))
-    // 이미지 width, height 설정.. 이미지는 비율중요
-    // lazy var에 대해... (stackView에서는 안됨..?)
+    private var isAllFieldsFilled: Bool = false {
+        didSet {
+            nextButton.backgroundColor = isAllFieldsFilled ? .customBlue : .lightGray
+            nextButton.isEnabled = isAllFieldsFilled
+        }
+    }
     
     private let logoImageView: UIImageView = {
         let imageView = UIImageView(image: UIImage(named: "Googlelogo"))
@@ -63,44 +66,35 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 백그라운드 컬러 안주면 검정색 화면뜸.. why???
         view.backgroundColor = .white
-        setupUI()
-        
+        configureUI()
+        setupButtonActions()
+        setupTextFieldEditingChangedActions()
+    }
+    
+    private func setupButtonActions() {
         makeAccountButton.addTarget(self, action: #selector(makeAccountButtonTapped), for: .touchUpInside)
         nextButton.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidChange(_:)), name: UITextField.textDidChangeNotification, object: nil)
     }
     
+    private func setupTextFieldEditingChangedActions() {
+        [loginInfoStackView.nameTextField, loginInfoStackView.idTextField, loginInfoStackView.passwordTextField].forEach {
+            $0.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        }
+    }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
-            if isAllFieldsFilled {
-                nextButton.backgroundColor = UIColor.customBlueButtonColor()
-                nextButton.isEnabled = true
-            } else {
-                nextButton.backgroundColor = .lightGray
-                nextButton.isEnabled = false
-            }
+        isAllFieldsFilled = loginInfoStackView.isAllFieldsFilled
     }
     
-    private var isAllFieldsFilled: Bool {
-        return loginInfoStackView.isAllFieldsFilled
-    }
-    
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
     @objc func makeAccountButtonTapped() {
-        print(#function)
         let signUpVC = SignUpViewController()
         navigationController?.pushViewController(signUpVC, animated: true)
     }
     
     @objc func nextButtonTapped() {
-        print(#function)
         guard let name = loginInfoStackView.nameTextField.text, !name.isEmpty else { return }
-            
+        
         let signUpSuccessVC = LoginSuccessViewController(name: name)
         let navigationController = UINavigationController(rootViewController: signUpSuccessVC)
         present(navigationController, animated: true, completion: nil)
