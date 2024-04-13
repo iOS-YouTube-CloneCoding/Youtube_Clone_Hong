@@ -22,18 +22,12 @@ final class LoginSuccessViewController: UIViewController {
     
     private let logoImageView = UIImageView(image: UIImage(named: "Googlelogo"))
     
-    // extension 활용해보기
     private let welcomLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 26, weight: .bold)
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = 5
-        let attributedString = NSMutableAttributedString(string: label.text ?? "")
-        attributedString.addAttribute(.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: attributedString.length))
-        label.attributedText = attributedString
+        label.setLineSpacing(lineSpacing: 5)
         label.textAlignment = .center
-        
         return label
     }()
     
