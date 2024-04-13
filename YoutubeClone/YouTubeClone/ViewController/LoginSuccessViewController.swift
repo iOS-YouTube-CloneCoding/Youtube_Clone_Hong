@@ -73,9 +73,11 @@ final class LoginSuccessViewController: UIViewController {
     @objc func loginWithDifferentAccountButtonTapped() {
         print(#function)
     }
+}
+
+extension LoginSuccessViewController {
     
-    
-    private func setupUI() {
+    private func configureUI() {
         [logoImageView, welcomLabel, okButton, loginWithDifferentAccountButton].forEach {
             view.addSubview($0)
             $0.translatesAutoresizingMaskIntoConstraints = false
