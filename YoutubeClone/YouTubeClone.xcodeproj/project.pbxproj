@@ -95,9 +95,18 @@
 		1DB5088A2BC9855F0096A747 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				1D3CAADD2BBB166300D20406 /* LoginTextField.swift */,
+				1DB5088B2BCCF1420096A747 /* CustomClass */,
+				1D3CAADA2BBB13C000D20406 /* Extension */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		1DB5088B2BCCF1420096A747 /* CustomClass */ = {
+			isa = PBXGroup;
+			children = (
+				1D3CAADD2BBB166300D20406 /* LoginTextField.swift */,
+			);
+			path = CustomClass;
 			sourceTree = "<group>";
 		};
 		1DE69ED42BB185750001CAB4 = {
@@ -121,7 +130,6 @@
 			children = (
 				1D3CAAE22BBB1F5700D20406 /* Apps */,
 				1DB5088A2BC9855F0096A747 /* Utils */,
-				1D3CAADA2BBB13C000D20406 /* Extension */,
 				1D3CAADF2BBB1A4E00D20406 /* ViewController */,
 			);
 			path = YouTubeClone;
