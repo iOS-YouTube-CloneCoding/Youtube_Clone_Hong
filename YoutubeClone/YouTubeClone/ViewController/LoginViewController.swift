@@ -36,7 +36,7 @@ class LoginViewController: UIViewController {
     private let detailGuideLabel: UILabel = {
         let label = UILabel()
         label.text = "Youtube로 이동하여 계속하세요.\n앱 및 Safari에서도 Google 서비스에 로그인됩니다. "
-        label.numberOfLines = 0 
+        label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 14)
         label.setLineSpacing(lineSpacing: 5)
         label.textAlignment = .center
@@ -66,18 +66,13 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .white
         configureUI()
-        setupButtonActions()
-        setupTextFieldEditingChangedActions()
+        addTarget()
     }
     
-    private func setupButtonActions() {
+    private func addTarget() {
         makeAccountButton.addTarget(self, action: #selector(makeAccountButtonTapped), for: .touchUpInside)
         nextButton.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
-    }
-    
-    private func setupTextFieldEditingChangedActions() {
         [loginInfoStackView.nameTextField, loginInfoStackView.idTextField, loginInfoStackView.passwordTextField].forEach {
             $0.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         }
@@ -104,6 +99,7 @@ class LoginViewController: UIViewController {
 extension LoginViewController {
     
     private func configureUI() {
+        view.backgroundColor = .white
         [logoImageView, loginInfoStackView, headGuideLabel,
          detailGuideLabel, makeAccountButton, nextButton].forEach {
             view.addSubview($0)

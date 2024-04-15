@@ -57,18 +57,13 @@ final class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .white
         configureUI()
-        setupButtonActions()
-        setupTextFieldEditingChangedActions()
+        addTarget()
     }
     
-    private func setupButtonActions() {
+    private func addTarget() {
         nextButton.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
         passwordCheckBox.addTarget(self, action: #selector(passwordCheckBoxTapped(_:)), for: .touchUpInside)
-    }
-    
-    private func setupTextFieldEditingChangedActions() {
         [loginInfoStackView.nameTextField, loginInfoStackView.idTextField, loginInfoStackView.passwordTextField].forEach {
             $0.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         }
@@ -102,7 +97,9 @@ final class SignUpViewController: UIViewController {
 }
 
 extension SignUpViewController {
+    
     private func configureUI() {
+        view.backgroundColor = .white
         [logoImageView, headGuideLabel, loginInfoStackView,
          passwordCheckBox, passwordToggleLabel, nextButton].forEach {
             view.addSubview($0)
