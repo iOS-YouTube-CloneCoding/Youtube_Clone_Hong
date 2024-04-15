@@ -53,7 +53,7 @@ final class LoginSuccessViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+
         configureUI()
         setupButtonActions()
     }
@@ -75,6 +75,7 @@ final class LoginSuccessViewController: UIViewController {
 extension LoginSuccessViewController {
     
     private func configureUI() {
+        view.backgroundColor = .white
         [logoImageView, welcomLabel, okButton, loginWithDifferentAccountButton].forEach {
             view.addSubview($0)
             $0.translatesAutoresizingMaskIntoConstraints = false
