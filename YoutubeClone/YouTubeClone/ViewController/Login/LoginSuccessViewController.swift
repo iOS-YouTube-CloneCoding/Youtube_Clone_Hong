@@ -66,6 +66,21 @@ final class LoginSuccessViewController: UIViewController {
         okButton.addTarget(self, action: #selector(okButtonTapped), for: .touchUpInside)
         loginWithDifferentAccountButton.addTarget(self, action: #selector(loginWithDifferentAccountButtonTapped), for: .touchUpInside)
     }
+    
+    func changeAnimation() {
+        let scenes = UIApplication.shared.connectedScenes
+        let windowScene = scenes.first as? UIWindowScene
+        let window = windowScene?.windows.first
+        
+        if let window = window {
+            UIView.transition(
+                with: window,
+                duration: 0.5,
+                options: .transitionCrossDissolve,
+                animations: nil
+            )
+        }
+    }
 
     @objc func okButtonTapped() {
         print(#function)
@@ -73,9 +88,9 @@ final class LoginSuccessViewController: UIViewController {
         
         let mainTabController = MainTabController()
         self.view.window?.rootViewController = mainTabController
-        self.view.window?.makeKeyAndVisible() // ?
         dismiss(animated: true) {
-            self.navigationController?.popToRootViewController(animated: false)
+            self.navigationController?.popToRootViewController(animated: true)
+            self.changeAnimation()
         }
     }
     
