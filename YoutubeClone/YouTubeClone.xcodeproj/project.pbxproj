@@ -17,7 +17,6 @@
 		1D73D39E2BF464F700A9B782 /* TabButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D73D39D2BF464F700A9B782 /* TabButtonCollectionViewCell.swift */; };
 		1D73D3A02BF4653500A9B782 /* ChannelCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D73D39F2BF4653500A9B782 /* ChannelCollectionView.swift */; };
 		1D73D3A22BF4653800A9B782 /* TabButtonCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D73D3A12BF4653800A9B782 /* TabButtonCollectionView.swift */; };
-		1D73D3A42BF4653B00A9B782 /* VideoTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D73D3A32BF4653B00A9B782 /* VideoTableView.swift */; };
 		1D73D3A72BF547AE00A9B782 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D73D3A62BF547AE00A9B782 /* Video.swift */; };
 		1D73D3A92BF547B300A9B782 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D73D3A82BF547B300A9B782 /* Channel.swift */; };
 		1DB5088E2BCD49410096A747 /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB5088D2BCD49410096A747 /* MainTabController.swift */; };
@@ -60,7 +59,6 @@
 		1D73D39D2BF464F700A9B782 /* TabButtonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButtonCollectionViewCell.swift; sourceTree = "<group>"; };
 		1D73D39F2BF4653500A9B782 /* ChannelCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCollectionView.swift; sourceTree = "<group>"; };
 		1D73D3A12BF4653800A9B782 /* TabButtonCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButtonCollectionView.swift; sourceTree = "<group>"; };
-		1D73D3A32BF4653B00A9B782 /* VideoTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableView.swift; sourceTree = "<group>"; };
 		1D73D3A62BF547AE00A9B782 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		1D73D3A82BF547B300A9B782 /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		1DB5088D2BCD49410096A747 /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
@@ -128,7 +126,7 @@
 			children = (
 				1DB508962BCD4A310096A747 /* SubscribeViewController.swift */,
 				1D73D3932BF4647500A9B782 /* TableViewCell */,
-				1D73D39A2BF464E300A9B782 /* View */,
+				1D73D39A2BF464E300A9B782 /* CollectionView */,
 				1D73D3922BF4647300A9B782 /* CollectionViewCell */,
 			);
 			path = Subscribe;
@@ -153,14 +151,13 @@
 			path = TableViewCell;
 			sourceTree = "<group>";
 		};
-		1D73D39A2BF464E300A9B782 /* View */ = {
+		1D73D39A2BF464E300A9B782 /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
 				1D73D39F2BF4653500A9B782 /* ChannelCollectionView.swift */,
 				1D73D3A12BF4653800A9B782 /* TabButtonCollectionView.swift */,
-				1D73D3A32BF4653B00A9B782 /* VideoTableView.swift */,
 			);
-			path = View;
+			path = CollectionView;
 			sourceTree = "<group>";
 		};
 		1D73D3A52BF5477600A9B782 /* Model */ = {
@@ -359,7 +356,6 @@
 				1DB508912BCD4A190096A747 /* HomeViewController.swift in Sources */,
 				1D73D3992BF464AB00A9B782 /* VideoTableViewCell.swift in Sources */,
 				1D73D3A92BF547B300A9B782 /* Channel.swift in Sources */,
-				1D73D3A42BF4653B00A9B782 /* VideoTableView.swift in Sources */,
 				1D73D39C2BF464F100A9B782 /* ChannelCollectionViewCell.swift in Sources */,
 				1D73D3A22BF4653800A9B782 /* TabButtonCollectionView.swift in Sources */,
 				1DE69EF72BB186F20001CAB4 /* SignUpViewController.swift in Sources */,
