@@ -42,6 +42,19 @@
             tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
         ])
     }
+    // MARK: - @objc
+    
+    @objc func windowSharingButtonTapped() {
+        print(#function)
+    }
+    
+    @objc func notificationButtonTapped() {
+        print(#function)
+    }
+    
+    @objc func searchButtonTapped() {
+        print(#function)
+    }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3
     }
