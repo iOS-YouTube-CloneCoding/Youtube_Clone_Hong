@@ -1,11 +1,37 @@
+//
+//  SubscribeViewController.swift
+//  YouTubeClone
+//
+//  Created by yujaehong on 4/15/24.
+//
+
+import UIKit
+
+class SubscribeViewController: UIViewController {
+    
+    // MARK: - Properties
+    
     private let video = VideoData()
     private let channel = ChannelData()
+    
     private var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
+    
+    // MARK: - LifeCycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .systemBackground
+        
         setupNavigationBarItems()
+        configureTableView()
+    }
+    
+    // MARK: - Methods
+    
     private func setupNavigationBarItems() {
         setupLeftNavigationItem()
         setupRightNavigationItems()
@@ -24,6 +50,7 @@
         let searchButton = UIBarButtonItem(image: UIImage(named: "SearchIcon"), style: .plain, target: self, action: #selector(searchButtonTapped))
         navigationItem.rightBarButtonItems = [searchButton, notificationButton, windowSharingButton]
     }
+    
     private func configureTableView() {
         view.addSubview(tableView)
         tableView.dataSource = self
@@ -44,6 +71,7 @@
             tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
         ])
     }
+    
     // MARK: - @objc
     
     @objc func windowSharingButtonTapped() {
@@ -57,6 +85,12 @@
     @objc func searchButtonTapped() {
         print(#function)
     }
+}
+
+// MARK: - UITableViewDataSource
+
+extension SubscribeViewController: UITableViewDataSource {
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3
     }
@@ -71,6 +105,7 @@
             fatalError("Unexpected section \(section)")
         }
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0:
@@ -88,3 +123,24 @@
             fatalError("Unexpected section \(indexPath.section)")
         }
     }
+}
+
+// MARK: - UITableViewDelegate
+
+extension SubscribeViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.section {
+        case 0:
+            return 104
+        case 1:
+            return 48
+        case 2:
+            return 306
+        default:
+            return UITableView.automaticDimension
+        }
+    }
+}
+
+
