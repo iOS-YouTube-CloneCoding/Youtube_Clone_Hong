@@ -56,3 +56,20 @@
             fatalError("Unexpected section \(section)")
         }
     }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch indexPath.section {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ChannelTVC", for: indexPath) as! ChannelTableViewCell
+            return cell
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TabButtonCell", for: indexPath) as! TabButtonTableViewCell
+            return cell
+        case 2:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "VideoCell", for: indexPath) as! VideoTableViewCell
+            cell.setData(thumb: video.list[indexPath.row].makeImage(),
+                         profile: video.list[indexPath.row].makeprofileImage(), title: video.list[indexPath.row].title, sub: video.list[indexPath.row].sub)
+            return cell
+        default:
+            fatalError("Unexpected section \(indexPath.section)")
+        }
+    }
