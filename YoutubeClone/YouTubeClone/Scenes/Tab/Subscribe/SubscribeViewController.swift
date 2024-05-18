@@ -42,3 +42,17 @@
             tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
         ])
     }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch section {
+        case 0, 1:
+            return 1
+        case 2:
+            return video.list.count
+        default:
+            fatalError("Unexpected section \(section)")
+        }
+    }
