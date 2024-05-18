@@ -1,3 +1,5 @@
+    private let video = VideoData()
+    private let channel = ChannelData()
     private var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
         tableView.translatesAutoresizingMaskIntoConstraints = false
