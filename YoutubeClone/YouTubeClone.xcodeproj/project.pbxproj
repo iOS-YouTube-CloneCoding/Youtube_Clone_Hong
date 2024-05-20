@@ -10,6 +10,15 @@
 		1D3CAADC2BBB13F000D20406 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3CAADB2BBB13F000D20406 /* UILabel+.swift */; };
 		1D3CAADE2BBB166300D20406 /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3CAADD2BBB166300D20406 /* LoginTextField.swift */; };
 		1D3CAAE12BBB1B8400D20406 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3CAAE02BBB1B8400D20406 /* UIColor+.swift */; };
+		1D73D3952BF464A300A9B782 /* ChannelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D73D3942BF464A300A9B782 /* ChannelTableViewCell.swift */; };
+		1D73D3972BF464A700A9B782 /* TabButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D73D3962BF464A700A9B782 /* TabButtonTableViewCell.swift */; };
+		1D73D3992BF464AB00A9B782 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D73D3982BF464AB00A9B782 /* VideoTableViewCell.swift */; };
+		1D73D39C2BF464F100A9B782 /* ChannelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D73D39B2BF464F100A9B782 /* ChannelCollectionViewCell.swift */; };
+		1D73D39E2BF464F700A9B782 /* TabButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D73D39D2BF464F700A9B782 /* TabButtonCollectionViewCell.swift */; };
+		1D73D3A02BF4653500A9B782 /* ChannelCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D73D39F2BF4653500A9B782 /* ChannelCollectionView.swift */; };
+		1D73D3A22BF4653800A9B782 /* TabButtonCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D73D3A12BF4653800A9B782 /* TabButtonCollectionView.swift */; };
+		1D73D3A72BF547AE00A9B782 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D73D3A62BF547AE00A9B782 /* Video.swift */; };
+		1D73D3A92BF547B300A9B782 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D73D3A82BF547B300A9B782 /* Channel.swift */; };
 		1DB5088E2BCD49410096A747 /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB5088D2BCD49410096A747 /* MainTabController.swift */; };
 		1DB508912BCD4A190096A747 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB508902BCD4A190096A747 /* HomeViewController.swift */; };
 		1DB508932BCD4A200096A747 /* ShortsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB508922BCD4A200096A747 /* ShortsViewController.swift */; };
@@ -43,6 +52,15 @@
 		1D3CAADB2BBB13F000D20406 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 		1D3CAADD2BBB166300D20406 /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
 		1D3CAAE02BBB1B8400D20406 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		1D73D3942BF464A300A9B782 /* ChannelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelTableViewCell.swift; sourceTree = "<group>"; };
+		1D73D3962BF464A700A9B782 /* TabButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButtonTableViewCell.swift; sourceTree = "<group>"; };
+		1D73D3982BF464AB00A9B782 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
+		1D73D39B2BF464F100A9B782 /* ChannelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCollectionViewCell.swift; sourceTree = "<group>"; };
+		1D73D39D2BF464F700A9B782 /* TabButtonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButtonCollectionViewCell.swift; sourceTree = "<group>"; };
+		1D73D39F2BF4653500A9B782 /* ChannelCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCollectionView.swift; sourceTree = "<group>"; };
+		1D73D3A12BF4653800A9B782 /* TabButtonCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButtonCollectionView.swift; sourceTree = "<group>"; };
+		1D73D3A62BF547AE00A9B782 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		1D73D3A82BF547B300A9B782 /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		1DB5088D2BCD49410096A747 /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
 		1DB508902BCD4A190096A747 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1DB508922BCD4A200096A747 /* ShortsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortsViewController.swift; sourceTree = "<group>"; };
@@ -81,13 +99,14 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		1D3CAADF2BBB1A4E00D20406 /* ViewController */ = {
+		1D3CAADF2BBB1A4E00D20406 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				1DB5088F2BCD4A030096A747 /* TabBar */,
+				1DB5088D2BCD49410096A747 /* MainTabController.swift */,
+				1DB5089A2BCD4A6C0096A747 /* Tab */,
 				1DB5088C2BCD487D0096A747 /* Login */,
 			);
-			path = ViewController;
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 		1D3CAAE22BBB1F5700D20406 /* Apps */ = {
@@ -100,6 +119,86 @@
 				1DE69EEE2BB185770001CAB4 /* Info.plist */,
 			);
 			path = Apps;
+			sourceTree = "<group>";
+		};
+		1D73D3912BF4618B00A9B782 /* Subscribe */ = {
+			isa = PBXGroup;
+			children = (
+				1DB508962BCD4A310096A747 /* SubscribeViewController.swift */,
+				1D73D3932BF4647500A9B782 /* TableViewCell */,
+				1D73D39A2BF464E300A9B782 /* CollectionView */,
+				1D73D3922BF4647300A9B782 /* CollectionViewCell */,
+			);
+			path = Subscribe;
+			sourceTree = "<group>";
+		};
+		1D73D3922BF4647300A9B782 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				1D73D39B2BF464F100A9B782 /* ChannelCollectionViewCell.swift */,
+				1D73D39D2BF464F700A9B782 /* TabButtonCollectionViewCell.swift */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		1D73D3932BF4647500A9B782 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				1D73D3942BF464A300A9B782 /* ChannelTableViewCell.swift */,
+				1D73D3962BF464A700A9B782 /* TabButtonTableViewCell.swift */,
+				1D73D3982BF464AB00A9B782 /* VideoTableViewCell.swift */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		1D73D39A2BF464E300A9B782 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				1D73D39F2BF4653500A9B782 /* ChannelCollectionView.swift */,
+				1D73D3A12BF4653800A9B782 /* TabButtonCollectionView.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		1D73D3A52BF5477600A9B782 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1D73D3A62BF547AE00A9B782 /* Video.swift */,
+				1D73D3A82BF547B300A9B782 /* Channel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1D73D3AF2BF5F66B00A9B782 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				1DB508982BCD4A390096A747 /* StorageViewController.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		1D73D3B02BF5F66E00A9B782 /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				1DB508942BCD4A2A0096A747 /* AddViewController.swift */,
+			);
+			path = Add;
+			sourceTree = "<group>";
+		};
+		1D73D3B12BF5F67100A9B782 /* Shorts */ = {
+			isa = PBXGroup;
+			children = (
+				1DB508922BCD4A200096A747 /* ShortsViewController.swift */,
+			);
+			path = Shorts;
+			sourceTree = "<group>";
+		};
+		1D73D3B22BF5F67400A9B782 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				1DB508902BCD4A190096A747 /* HomeViewController.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		1DB5088A2BC9855F0096A747 /* Utils */ = {
@@ -130,23 +229,14 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
-		1DB5088F2BCD4A030096A747 /* TabBar */ = {
-			isa = PBXGroup;
-			children = (
-				1DB5088D2BCD49410096A747 /* MainTabController.swift */,
-				1DB5089A2BCD4A6C0096A747 /* Tab */,
-			);
-			path = TabBar;
-			sourceTree = "<group>";
-		};
 		1DB5089A2BCD4A6C0096A747 /* Tab */ = {
 			isa = PBXGroup;
 			children = (
-				1DB508902BCD4A190096A747 /* HomeViewController.swift */,
-				1DB508922BCD4A200096A747 /* ShortsViewController.swift */,
-				1DB508942BCD4A2A0096A747 /* AddViewController.swift */,
-				1DB508962BCD4A310096A747 /* SubscribeViewController.swift */,
-				1DB508982BCD4A390096A747 /* StorageViewController.swift */,
+				1D73D3B22BF5F67400A9B782 /* Home */,
+				1D73D3B12BF5F67100A9B782 /* Shorts */,
+				1D73D3B02BF5F66E00A9B782 /* Add */,
+				1D73D3912BF4618B00A9B782 /* Subscribe */,
+				1D73D3AF2BF5F66B00A9B782 /* Storage */,
 			);
 			path = Tab;
 			sourceTree = "<group>";
@@ -171,8 +261,9 @@
 			isa = PBXGroup;
 			children = (
 				1D3CAAE22BBB1F5700D20406 /* Apps */,
+				1D73D3A52BF5477600A9B782 /* Model */,
 				1DB5088A2BC9855F0096A747 /* Utils */,
-				1D3CAADF2BBB1A4E00D20406 /* ViewController */,
+				1D3CAADF2BBB1A4E00D20406 /* Scenes */,
 			);
 			path = YouTubeClone;
 			sourceTree = "<group>";
@@ -249,18 +340,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DE69EF52BB186930001CAB4 /* LoginViewController.swift in Sources */,
+				1D73D3952BF464A300A9B782 /* ChannelTableViewCell.swift in Sources */,
 				1DE69EF92BB187590001CAB4 /* LoginSuccessViewController.swift in Sources */,
 				1DE69EE12BB185750001CAB4 /* AppDelegate.swift in Sources */,
+				1D73D39E2BF464F700A9B782 /* TabButtonCollectionViewCell.swift in Sources */,
 				1DB508972BCD4A310096A747 /* SubscribeViewController.swift in Sources */,
+				1D73D3972BF464A700A9B782 /* TabButtonTableViewCell.swift in Sources */,
 				1DB508932BCD4A200096A747 /* ShortsViewController.swift in Sources */,
 				1DB5088E2BCD49410096A747 /* MainTabController.swift in Sources */,
 				1DE69EFB2BB19E5A0001CAB4 /* LoginInfoStackView.swift in Sources */,
 				1D3CAADC2BBB13F000D20406 /* UILabel+.swift in Sources */,
 				1DB508992BCD4A390096A747 /* StorageViewController.swift in Sources */,
 				1DE69EE32BB185750001CAB4 /* SceneDelegate.swift in Sources */,
+				1D73D3A72BF547AE00A9B782 /* Video.swift in Sources */,
 				1DB508912BCD4A190096A747 /* HomeViewController.swift in Sources */,
+				1D73D3992BF464AB00A9B782 /* VideoTableViewCell.swift in Sources */,
+				1D73D3A92BF547B300A9B782 /* Channel.swift in Sources */,
+				1D73D39C2BF464F100A9B782 /* ChannelCollectionViewCell.swift in Sources */,
+				1D73D3A22BF4653800A9B782 /* TabButtonCollectionView.swift in Sources */,
 				1DE69EF72BB186F20001CAB4 /* SignUpViewController.swift in Sources */,
 				1D3CAADE2BBB166300D20406 /* LoginTextField.swift in Sources */,
+				1D73D3A02BF4653500A9B782 /* ChannelCollectionView.swift in Sources */,
 				1DB508952BCD4A2A0096A747 /* AddViewController.swift in Sources */,
 				1D3CAAE12BBB1B8400D20406 /* UIColor+.swift in Sources */,
 			);
