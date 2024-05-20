@@ -16,28 +16,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let window = UIWindow(windowScene: windowScene)
         
-        let loginVC = LoginViewController()
-        let navigationController = UINavigationController(rootViewController: loginVC)
-        window.rootViewController = navigationController
+        let isLoggedIn = UserDefaults.standard.bool(forKey: "isLoggedIn")
+        let rootViewController: UIViewController
+        
+        if isLoggedIn {
+            rootViewController = MainTabController()
+        } else {
+            let navigationController = UINavigationController(rootViewController: LoginViewController())
+            rootViewController = navigationController
+        }
+        
+        window.rootViewController = rootViewController
         window.makeKeyAndVisible()
         self.window = window
     }
-    
-    func sceneDidDisconnect(_ scene: UIScene) {
-    }
-    
-    func sceneDidBecomeActive(_ scene: UIScene) {
-    }
-    
-    func sceneWillResignActive(_ scene: UIScene) {
-    }
-    
-    func sceneWillEnterForeground(_ scene: UIScene) {
-    }
-    
-    func sceneDidEnterBackground(_ scene: UIScene) {
-    }
-    
-    
 }
 

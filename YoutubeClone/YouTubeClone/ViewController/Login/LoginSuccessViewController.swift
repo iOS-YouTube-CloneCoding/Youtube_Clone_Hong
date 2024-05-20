@@ -51,9 +51,13 @@ final class LoginSuccessViewController: UIViewController {
         return button
     }()
     
+    deinit {
+        print("LoginSuccessViewController 해제")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         configureUI()
         setupButtonActions()
     }
@@ -63,12 +67,38 @@ final class LoginSuccessViewController: UIViewController {
         loginWithDifferentAccountButton.addTarget(self, action: #selector(loginWithDifferentAccountButtonTapped), for: .touchUpInside)
     }
     
+    func changeAnimation() {
+        let scenes = UIApplication.shared.connectedScenes
+        let windowScene = scenes.first as? UIWindowScene
+        let window = windowScene?.windows.first
+        
+        if let window = window {
+            UIView.transition(
+                with: window,
+                duration: 0.5,
+                options: .transitionCrossDissolve,
+                animations: nil
+            )
+        }
+    }
+
     @objc func okButtonTapped() {
         print(#function)
+        UserDefaults.standard.set(true, forKey: "isLoggedIn")
+        
+        let mainTabController = MainTabController()
+        self.view.window?.rootViewController = mainTabController
+        dismiss(animated: true) {
+            self.navigationController?.popToRootViewController(animated: true)
+            self.changeAnimation()
+        }
     }
     
     @objc func loginWithDifferentAccountButtonTapped() {
         print(#function)
+        guard let presentingVC = self.presentingViewController as? UINavigationController else { return }
+        presentingVC.popToRootViewController(animated: false)
+        dismiss(animated: true)
     }
 }
 

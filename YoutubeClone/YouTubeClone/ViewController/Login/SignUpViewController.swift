@@ -61,6 +61,10 @@ final class SignUpViewController: UIViewController {
         addTarget()
     }
     
+    deinit {
+        print("SignUpViewController 해제")
+    }
+    
     private func addTarget() {
         nextButton.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
         passwordCheckBox.addTarget(self, action: #selector(passwordCheckBoxTapped(_:)), for: .touchUpInside)
@@ -78,8 +82,7 @@ final class SignUpViewController: UIViewController {
         guard let name = loginInfoStackView.nameTextField.text else { return }
         let signUpSuccessVC = LoginSuccessViewController(name: name)
         
-        let navigationController = UINavigationController(rootViewController: signUpSuccessVC)
-        present(navigationController, animated: true, completion: nil)
+        present(signUpSuccessVC, animated: true)
     }
     
     @objc func passwordCheckBoxTapped(_ sender: UIButton) {

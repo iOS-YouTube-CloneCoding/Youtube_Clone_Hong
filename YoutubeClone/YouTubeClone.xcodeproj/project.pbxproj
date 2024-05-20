@@ -10,6 +10,12 @@
 		1D3CAADC2BBB13F000D20406 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3CAADB2BBB13F000D20406 /* UILabel+.swift */; };
 		1D3CAADE2BBB166300D20406 /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3CAADD2BBB166300D20406 /* LoginTextField.swift */; };
 		1D3CAAE12BBB1B8400D20406 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3CAAE02BBB1B8400D20406 /* UIColor+.swift */; };
+		1DB5088E2BCD49410096A747 /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB5088D2BCD49410096A747 /* MainTabController.swift */; };
+		1DB508912BCD4A190096A747 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB508902BCD4A190096A747 /* HomeViewController.swift */; };
+		1DB508932BCD4A200096A747 /* ShortsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB508922BCD4A200096A747 /* ShortsViewController.swift */; };
+		1DB508952BCD4A2A0096A747 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB508942BCD4A2A0096A747 /* AddViewController.swift */; };
+		1DB508972BCD4A310096A747 /* SubscribeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB508962BCD4A310096A747 /* SubscribeViewController.swift */; };
+		1DB508992BCD4A390096A747 /* StorageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB508982BCD4A390096A747 /* StorageViewController.swift */; };
 		1DE69EE12BB185750001CAB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE69EE02BB185750001CAB4 /* AppDelegate.swift */; };
 		1DE69EE32BB185750001CAB4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE69EE22BB185750001CAB4 /* SceneDelegate.swift */; };
 		1DE69EEA2BB185770001CAB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DE69EE92BB185770001CAB4 /* Assets.xcassets */; };
@@ -37,6 +43,12 @@
 		1D3CAADB2BBB13F000D20406 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 		1D3CAADD2BBB166300D20406 /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
 		1D3CAAE02BBB1B8400D20406 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		1DB5088D2BCD49410096A747 /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
+		1DB508902BCD4A190096A747 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		1DB508922BCD4A200096A747 /* ShortsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortsViewController.swift; sourceTree = "<group>"; };
+		1DB508942BCD4A2A0096A747 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		1DB508962BCD4A310096A747 /* SubscribeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeViewController.swift; sourceTree = "<group>"; };
+		1DB508982BCD4A390096A747 /* StorageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageViewController.swift; sourceTree = "<group>"; };
 		1DE69EDD2BB185750001CAB4 /* YouTubeClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YouTubeClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DE69EE02BB185750001CAB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1DE69EE22BB185750001CAB4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,10 +84,8 @@
 		1D3CAADF2BBB1A4E00D20406 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				1DE69EFA2BB19E5A0001CAB4 /* LoginInfoStackView.swift */,
-				1DE69EF42BB186930001CAB4 /* LoginViewController.swift */,
-				1DE69EF62BB186F20001CAB4 /* SignUpViewController.swift */,
-				1DE69EF82BB187590001CAB4 /* LoginSuccessViewController.swift */,
+				1DB5088F2BCD4A030096A747 /* TabBar */,
+				1DB5088C2BCD487D0096A747 /* Login */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -107,6 +117,38 @@
 				1D3CAADD2BBB166300D20406 /* LoginTextField.swift */,
 			);
 			path = CustomClass;
+			sourceTree = "<group>";
+		};
+		1DB5088C2BCD487D0096A747 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				1DE69EFA2BB19E5A0001CAB4 /* LoginInfoStackView.swift */,
+				1DE69EF42BB186930001CAB4 /* LoginViewController.swift */,
+				1DE69EF62BB186F20001CAB4 /* SignUpViewController.swift */,
+				1DE69EF82BB187590001CAB4 /* LoginSuccessViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		1DB5088F2BCD4A030096A747 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				1DB5088D2BCD49410096A747 /* MainTabController.swift */,
+				1DB5089A2BCD4A6C0096A747 /* Tab */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		1DB5089A2BCD4A6C0096A747 /* Tab */ = {
+			isa = PBXGroup;
+			children = (
+				1DB508902BCD4A190096A747 /* HomeViewController.swift */,
+				1DB508922BCD4A200096A747 /* ShortsViewController.swift */,
+				1DB508942BCD4A2A0096A747 /* AddViewController.swift */,
+				1DB508962BCD4A310096A747 /* SubscribeViewController.swift */,
+				1DB508982BCD4A390096A747 /* StorageViewController.swift */,
+			);
+			path = Tab;
 			sourceTree = "<group>";
 		};
 		1DE69ED42BB185750001CAB4 = {
@@ -209,11 +251,17 @@
 				1DE69EF52BB186930001CAB4 /* LoginViewController.swift in Sources */,
 				1DE69EF92BB187590001CAB4 /* LoginSuccessViewController.swift in Sources */,
 				1DE69EE12BB185750001CAB4 /* AppDelegate.swift in Sources */,
+				1DB508972BCD4A310096A747 /* SubscribeViewController.swift in Sources */,
+				1DB508932BCD4A200096A747 /* ShortsViewController.swift in Sources */,
+				1DB5088E2BCD49410096A747 /* MainTabController.swift in Sources */,
 				1DE69EFB2BB19E5A0001CAB4 /* LoginInfoStackView.swift in Sources */,
 				1D3CAADC2BBB13F000D20406 /* UILabel+.swift in Sources */,
+				1DB508992BCD4A390096A747 /* StorageViewController.swift in Sources */,
 				1DE69EE32BB185750001CAB4 /* SceneDelegate.swift in Sources */,
+				1DB508912BCD4A190096A747 /* HomeViewController.swift in Sources */,
 				1DE69EF72BB186F20001CAB4 /* SignUpViewController.swift in Sources */,
 				1D3CAADE2BBB166300D20406 /* LoginTextField.swift in Sources */,
+				1DB508952BCD4A2A0096A747 /* AddViewController.swift in Sources */,
 				1D3CAAE12BBB1B8400D20406 /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

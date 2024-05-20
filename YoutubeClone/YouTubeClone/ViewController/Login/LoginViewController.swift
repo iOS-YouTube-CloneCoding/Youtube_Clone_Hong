@@ -20,8 +20,8 @@ class LoginViewController: UIViewController {
     
     private let logoImageView: UIImageView = {
         let imageView = UIImageView(image: UIImage(named: "Googlelogo"))
-        imageView.contentMode = .scaleAspectFit //  이미지가 이미지 뷰에 맞게 비율을 유지하면서 확대 또는 축소되도록 ...?
-        imageView.widthAnchor.constraint(equalToConstant: 118).isActive = true // ...?
+        imageView.contentMode = .scaleAspectFit
+        imageView.widthAnchor.constraint(equalToConstant: 118).isActive = true 
         imageView.heightAnchor.constraint(equalToConstant: 40).isActive = true
         return imageView
     }()
@@ -63,6 +63,10 @@ class LoginViewController: UIViewController {
         return button
     }()
     
+    deinit {
+        print("LoginViewController 해제")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -89,10 +93,9 @@ class LoginViewController: UIViewController {
     
     @objc func nextButtonTapped() {
         guard let name = loginInfoStackView.nameTextField.text, !name.isEmpty else { return }
-        
-        let signUpSuccessVC = LoginSuccessViewController(name: name)
-        let navigationController = UINavigationController(rootViewController: signUpSuccessVC)
-        present(navigationController, animated: true, completion: nil)
+        let loginSuccessVC = LoginSuccessViewController(name: name)
+        loginSuccessVC.modalPresentationStyle = .fullScreen
+        present(loginSuccessVC, animated: true, completion: nil)
     }
 }
 
