@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1D3CAADC2BBB13F000D20406 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3CAADB2BBB13F000D20406 /* UILabel+.swift */; };
-		1D3CAADE2BBB166300D20406 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3CAADD2BBB166300D20406 /* UITextField+.swift */; };
+		1D3CAADE2BBB166300D20406 /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3CAADD2BBB166300D20406 /* LoginTextField.swift */; };
+		1D3CAAE12BBB1B8400D20406 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3CAAE02BBB1B8400D20406 /* UIColor+.swift */; };
 		1DE69EE12BB185750001CAB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE69EE02BB185750001CAB4 /* AppDelegate.swift */; };
 		1DE69EE32BB185750001CAB4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE69EE22BB185750001CAB4 /* SceneDelegate.swift */; };
 		1DE69EEA2BB185770001CAB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DE69EE92BB185770001CAB4 /* Assets.xcassets */; };
@@ -19,9 +20,23 @@
 		1DE69EFB2BB19E5A0001CAB4 /* LoginInfoStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE69EFA2BB19E5A0001CAB4 /* LoginInfoStackView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		1DB5086E2BC7BCE20096A747 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		1D3CAADB2BBB13F000D20406 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
-		1D3CAADD2BBB166300D20406 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
+		1D3CAADD2BBB166300D20406 /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
+		1D3CAAE02BBB1B8400D20406 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		1DE69EDD2BB185750001CAB4 /* YouTubeClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YouTubeClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DE69EE02BB185750001CAB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1DE69EE22BB185750001CAB4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,7 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				1D3CAADB2BBB13F000D20406 /* UILabel+.swift */,
-				1D3CAADD2BBB166300D20406 /* UITextField+.swift */,
+				1D3CAAE02BBB1B8400D20406 /* UIColor+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -63,6 +78,35 @@
 				1DE69EF82BB187590001CAB4 /* LoginSuccessViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		1D3CAAE22BBB1F5700D20406 /* Apps */ = {
+			isa = PBXGroup;
+			children = (
+				1DE69EE02BB185750001CAB4 /* AppDelegate.swift */,
+				1DE69EE22BB185750001CAB4 /* SceneDelegate.swift */,
+				1DE69EE92BB185770001CAB4 /* Assets.xcassets */,
+				1DE69EEB2BB185770001CAB4 /* LaunchScreen.storyboard */,
+				1DE69EEE2BB185770001CAB4 /* Info.plist */,
+			);
+			path = Apps;
+			sourceTree = "<group>";
+		};
+		1DB5088A2BC9855F0096A747 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				1DB5088B2BCCF1420096A747 /* CustomClass */,
+				1D3CAADA2BBB13C000D20406 /* Extension */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		1DB5088B2BCCF1420096A747 /* CustomClass */ = {
+			isa = PBXGroup;
+			children = (
+				1D3CAADD2BBB166300D20406 /* LoginTextField.swift */,
+			);
+			path = CustomClass;
 			sourceTree = "<group>";
 		};
 		1DE69ED42BB185750001CAB4 = {
@@ -84,13 +128,9 @@
 		1DE69EDF2BB185750001CAB4 /* YouTubeClone */ = {
 			isa = PBXGroup;
 			children = (
+				1D3CAAE22BBB1F5700D20406 /* Apps */,
+				1DB5088A2BC9855F0096A747 /* Utils */,
 				1D3CAADF2BBB1A4E00D20406 /* ViewController */,
-				1D3CAADA2BBB13C000D20406 /* Extension */,
-				1DE69EE02BB185750001CAB4 /* AppDelegate.swift */,
-				1DE69EE22BB185750001CAB4 /* SceneDelegate.swift */,
-				1DE69EE92BB185770001CAB4 /* Assets.xcassets */,
-				1DE69EEB2BB185770001CAB4 /* LaunchScreen.storyboard */,
-				1DE69EEE2BB185770001CAB4 /* Info.plist */,
 			);
 			path = YouTubeClone;
 			sourceTree = "<group>";
@@ -105,6 +145,7 @@
 				1DE69ED92BB185750001CAB4 /* Sources */,
 				1DE69EDA2BB185750001CAB4 /* Frameworks */,
 				1DE69EDB2BB185750001CAB4 /* Resources */,
+				1DB5086E2BC7BCE20096A747 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -172,7 +213,8 @@
 				1D3CAADC2BBB13F000D20406 /* UILabel+.swift in Sources */,
 				1DE69EE32BB185750001CAB4 /* SceneDelegate.swift in Sources */,
 				1DE69EF72BB186F20001CAB4 /* SignUpViewController.swift in Sources */,
-				1D3CAADE2BBB166300D20406 /* UITextField+.swift in Sources */,
+				1D3CAADE2BBB166300D20406 /* LoginTextField.swift in Sources */,
+				1D3CAAE12BBB1B8400D20406 /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,13 +354,14 @@
 		1DE69EF22BB185770001CAB4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7HTRP53WA3;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = YouTubeClone/Info.plist;
+				INFOPLIST_FILE = YouTubeClone/Apps/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -343,13 +386,14 @@
 		1DE69EF32BB185770001CAB4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7HTRP53WA3;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = YouTubeClone/Info.plist;
+				INFOPLIST_FILE = YouTubeClone/Apps/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

@@ -11,9 +11,12 @@ class LoginViewController: UIViewController {
     
     private let loginInfoStackView = LoginInfoStackView()
     
-    //  let logoImageView = UIImageView(image: UIImage(named: "GoogleLogo"))
-    // 이미지 width, height 설정.. 이미지는 비율중요
-    // lazy var에 대해... (stackView에서는 안됨..?)
+    private var isAllFieldsFilled: Bool = false {
+        didSet {
+            nextButton.backgroundColor = isAllFieldsFilled ? .customBlue : .lightGray
+            nextButton.isEnabled = isAllFieldsFilled
+        }
+    }
     
     private let logoImageView: UIImageView = {
         let imageView = UIImageView(image: UIImage(named: "Googlelogo"))
@@ -33,7 +36,7 @@ class LoginViewController: UIViewController {
     private let detailGuideLabel: UILabel = {
         let label = UILabel()
         label.text = "Youtube로 이동하여 계속하세요.\n앱 및 Safari에서도 Google 서비스에 로그인됩니다. "
-        label.numberOfLines = 0 // 여러 줄 표시를 위해 설정
+        label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 14)
         label.setLineSpacing(lineSpacing: 5)
         label.textAlignment = .center
@@ -63,52 +66,41 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 백그라운드 컬러 안주면 검정색 화면뜸.. why???
-        view.backgroundColor = .white
-        setupUI()
-        
+        configureUI()
+        addTarget()
+    }
+    
+    private func addTarget() {
         makeAccountButton.addTarget(self, action: #selector(makeAccountButtonTapped), for: .touchUpInside)
         nextButton.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidChange(_:)), name: UITextField.textDidChangeNotification, object: nil)
+        [loginInfoStackView.nameTextField, loginInfoStackView.idTextField, loginInfoStackView.passwordTextField].forEach {
+            $0.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        }
     }
-    
     
     @objc func textFieldDidChange(_ textField: UITextField) {
-            if isAllFieldsFilled {
-                nextButton.backgroundColor = .systemBlue
-                nextButton.isEnabled = true
-            } else {
-                nextButton.backgroundColor = .gray
-                nextButton.isEnabled = false
-            }
+        isAllFieldsFilled = loginInfoStackView.isAllFieldsFilled
     }
     
-    private var isAllFieldsFilled: Bool {
-        return loginInfoStackView.isAllFieldsFilled
-    }
-    
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
     @objc func makeAccountButtonTapped() {
-        print(#function)
         let signUpVC = SignUpViewController()
         navigationController?.pushViewController(signUpVC, animated: true)
     }
     
     @objc func nextButtonTapped() {
-        print(#function)
         guard let name = loginInfoStackView.nameTextField.text, !name.isEmpty else { return }
-            
+        
         let signUpSuccessVC = LoginSuccessViewController(name: name)
         let navigationController = UINavigationController(rootViewController: signUpSuccessVC)
         present(navigationController, animated: true, completion: nil)
     }
+}
+
+extension LoginViewController {
     
-    private func setupUI() {
-        // ⭐️ 고차함수가 너무 많아지면 연산이 많아져서 안좋을수있음.. 주의
-        [logoImageView, loginInfoStackView, headGuideLabel, 
+    private func configureUI() {
+        view.backgroundColor = .white
+        [logoImageView, loginInfoStackView, headGuideLabel,
          detailGuideLabel, makeAccountButton, nextButton].forEach {
             view.addSubview($0)
             $0.translatesAutoresizingMaskIntoConstraints = false
@@ -142,8 +134,6 @@ class LoginViewController: UIViewController {
             nextButton.heightAnchor.constraint(equalToConstant: 42)
         ])
     }
-    
 }
 
-// NSLayoutConstraint 익숙해지면 -> snapkit 사용해보기
 

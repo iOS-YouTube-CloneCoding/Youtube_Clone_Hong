@@ -7,35 +7,26 @@
 
 import UIKit
 
-class LoginInfoStackView: UIStackView {
+final class LoginInfoStackView: UIStackView {
     
-    let nameTextField: UITextField = {
-        let textField = UITextField()
+    let nameTextField: LoginTextField = {
+        let textField = LoginTextField()
         textField.placeholder = "이름을 입력해주세요."
-        textField.font = UIFont.systemFont(ofSize: 15)
-        textField.borderStyle = .roundedRect
-        textField.addLeftPadding()
         return textField
     }()
     
-    let idTextField: UITextField = {
-        let textField = UITextField()
+    let idTextField: LoginTextField = {
+        let textField = LoginTextField()
         textField.placeholder = "이메일 또는 휴대전화"
-        textField.font = UIFont.systemFont(ofSize: 15)
-        textField.borderStyle = .roundedRect
-        textField.addLeftPadding()
         return textField
     }()
     
-    let passwordTextField: UITextField = {
-        let textField = UITextField()
+    let passwordTextField: LoginTextField = {
+        let textField = LoginTextField()
         textField.placeholder = "비밀번호 입력"
-        textField.font = UIFont.systemFont(ofSize: 15)
-        textField.borderStyle = .roundedRect
-        textField.addLeftPadding()
-        textField.isSecureTextEntry = true
         return textField
     }()
+    
     
     var isAllFieldsFilled: Bool {
         return !nameTextField.text!.isEmpty && !idTextField.text!.isEmpty && !passwordTextField.text!.isEmpty
@@ -44,6 +35,7 @@ class LoginInfoStackView: UIStackView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
+        setupTextFieldDelegate()
     }
     
     required init(coder: NSCoder) {
@@ -55,9 +47,23 @@ class LoginInfoStackView: UIStackView {
         alignment = .fill
         distribution = .fillEqually
         spacing = 17
-        [nameTextField, idTextField, passwordTextField].forEach {
-            addArrangedSubview($0)
-        }
+        [nameTextField, idTextField, passwordTextField].forEach { addArrangedSubview($0) }
     }
     
+    private func setupTextFieldDelegate() {
+        [nameTextField, idTextField, passwordTextField].forEach { $0.delegate = self }
+    }
+}
+
+extension LoginInfoStackView: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == nameTextField {
+            idTextField.becomeFirstResponder()
+        } else if textField == idTextField {
+            passwordTextField.becomeFirstResponder()
+        } else if textField == passwordTextField {
+            textField.resignFirstResponder()
+        }
+        return true
+    }
 }

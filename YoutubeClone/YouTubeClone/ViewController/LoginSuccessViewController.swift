@@ -22,18 +22,12 @@ final class LoginSuccessViewController: UIViewController {
     
     private let logoImageView = UIImageView(image: UIImage(named: "Googlelogo"))
     
-    // extension 활용해보기
     private let welcomLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 26, weight: .bold)
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = 5
-        let attributedString = NSMutableAttributedString(string: label.text ?? "")
-        attributedString.addAttribute(.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: attributedString.length))
-        label.attributedText = attributedString
+        label.setLineSpacing(lineSpacing: 5)
         label.textAlignment = .center
-        
         return label
     }()
     
@@ -42,7 +36,7 @@ final class LoginSuccessViewController: UIViewController {
         button.setTitle("확인", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
         button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = UIColor.systemBlue
+        button.backgroundColor = .customBlue
         button.layer.cornerRadius = 8
         return button
     }()
@@ -51,7 +45,7 @@ final class LoginSuccessViewController: UIViewController {
         let button = UIButton()
         button.setTitle("다른 계정으로 로그인하기", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
-        button.setTitleColor(.systemBlue, for: .normal)
+        button.setTitleColor(.customBlue, for: .normal)
         button.backgroundColor = UIColor.clear
         button.layer.cornerRadius = 8
         return button
@@ -59,9 +53,12 @@ final class LoginSuccessViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-        setupUI()
-        
+
+        configureUI()
+        setupButtonActions()
+    }
+    
+    private func setupButtonActions() {
         okButton.addTarget(self, action: #selector(okButtonTapped), for: .touchUpInside)
         loginWithDifferentAccountButton.addTarget(self, action: #selector(loginWithDifferentAccountButtonTapped), for: .touchUpInside)
     }
@@ -73,9 +70,12 @@ final class LoginSuccessViewController: UIViewController {
     @objc func loginWithDifferentAccountButtonTapped() {
         print(#function)
     }
+}
+
+extension LoginSuccessViewController {
     
-    
-    private func setupUI() {
+    private func configureUI() {
+        view.backgroundColor = .white
         [logoImageView, welcomLabel, okButton, loginWithDifferentAccountButton].forEach {
             view.addSubview($0)
             $0.translatesAutoresizingMaskIntoConstraints = false
